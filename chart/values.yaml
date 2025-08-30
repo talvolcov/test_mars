@@ -5,7 +5,7 @@ redis:
   follower: 
     name: redis-follower
     role: follower
-    replicas: 2
+    replicas: 1
     container:
       name: follower
       image: us-docker.pkg.dev/google-samples/containers/gke/gb-redis-follower:v2
@@ -18,7 +18,7 @@ redis:
   leader: 
     name: redis-leader
     role: leader
-    replicas: 1
+    replicas: 2
     container:
       name: leader
       image: docker.io/redis:6.0.5
