@@ -32,7 +32,7 @@ redis:
 # Web app pods
 frontend: 
   name: frontend
-  replicas: 3
+  replicas: 1
   applbl: guestbook
   tier: frontend
   svcPort: 80
