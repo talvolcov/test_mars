@@ -13,6 +13,7 @@ spec:
       labels:
         app: {{ .Values.frontend.applbl }}
         tier: {{ .Values.frontend.tier }}
+        monitor: {{ .Values.prometheusLbl}}
     spec:
       containers:
       - name: {{ .Values.frontend.containers.name }}
@@ -26,3 +27,11 @@ spec:
             memory: {{ .Values.frontend.containers.resources.requests.memory }}
         ports:
         - containerPort: {{ .Values.frontend.containers.ports.source }}
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: http
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: http

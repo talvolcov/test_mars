@@ -53,3 +53,5 @@ ingress:
   host: guestbook.local
   tlsSecret: guestbook-tls-data
 
+prometheusPort: 8080
+prometheusLbl: monitor

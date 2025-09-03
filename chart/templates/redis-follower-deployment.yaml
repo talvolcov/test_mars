@@ -17,6 +17,7 @@ spec:
         app: {{ .Values.redis.app }}
         role: {{ .Values.redis.follower.role }}
         tier: {{ .Values.redis.tier }}
+        monitor: {{ .Values.prometheusLbl }}
     spec:
       containers:
       - name: {{ .Values.redis.follower.container.name }}
@@ -27,3 +28,12 @@ spec:
             memory: {{ .Values.redis.follower.container.resources.requests.memory }}
         ports:
         - containerPort: {{ .Values.redis.follower.container.ports.source }}
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: http
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: http
+
