@@ -28,11 +28,3 @@ spec:
             memory: {{ .Values.redis.leader.container.resources.requests.memory }}
         ports:
         - containerPort: {{ .Values.redis.leader.container.ports.podSource }}
-        livenessProbe:
-          httpGet:
-            path: /healthz
-            port: {{ .Values.monitorPort }}
-        readinessProbe:
-          httpGet:
-            path: /ready
-            port: {{ .Values.monitorPort }}
