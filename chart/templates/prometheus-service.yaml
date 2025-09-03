@@ -8,6 +8,6 @@ spec:
   ports:
     - name: http
       port: {{ .Values.prometheusPort }}
-      targetPort: http
+      targetPort: {{ .Values.monitorPort }}
   selector:
     monitor: {{ .Values.prometheusLbl }}

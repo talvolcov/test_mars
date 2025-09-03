@@ -55,3 +55,4 @@ ingress:
 
 prometheusPort: 8080
 prometheusLbl: monitor
+monitorPort: 80
