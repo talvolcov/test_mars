@@ -1,19 +1,21 @@
 Introduction:
-The repository contains the deliveries for the home task by Mars.
+The repository contains the deliveries for the home task by Mars. 
+The Environment is designed to be deployed on AWS and contains the following components:
+Kubernetes cluster with a guestbook application (as attached to the task), Ingress controller with Cert-manager, ArgoCD and Prometheus/Grafana.
+All the environment will be deployed by a single run of Terraform code.
 The following folders are located in the repository:
 - helm : contains the helm chart with the application yaml templates that is handled by ArgoCD
 - Terraform : Contains the terraform code to be downloaded and run using Terraform CLI
-- permissions - Required customized permissions to run Terraform code on AWS
 
 Assumptions:
 - Since it's a demo, the cheapest chipset was chosen, without considering redudency or stability
-- For the same reason, the self sign certificate was installed (instead of real DNS). The access to the website will trigger a validation error, but checking the certificate detail will provide the DNS name.
-- For simplicity, the deplyment is done by a user with permissions and not by assume role.
+- For the same reason, the self sign certificate was installed (instead of real DNS). The access to the website will trigger a validation error, but checking the certificate detail will provide the DNS name
+- For simplicity, the deplyment is done by a user with permissions and not by assume role
+- The deployment should be done with admin access (sorry, but I didn't find a convenient way to narrow permissions)
 - Password encrytption is not handled in this task
-- Specific user's permissions are not narrowed down. Please use the specified permission policy or run with an admin user.
 
 Prerquisites:
-- An AWS user with the following permissions (or admin): AmazonEC2FullAccess, AmazonEKS_CNI_Policy,AmazonEKSClusterPolicy, AmazonEKSWorkerNodePolicy, AWSKeyManagementServicePowerUser, CloudWatchAgentServerPolicy, CloudWatchLogsFullAccess, ElasticLoadBalancingFullAccess, IAMFullAccess. In addition, please add the custom policy I provided in "permissions" folder.
+- An AWS user with the admin access.
 - Terraform CLI installed locally
 - AWS CLI installed locally
 - kubectl component installed locally
@@ -38,7 +40,9 @@ Running instructions:
    f. Save the file
 
 
+
 Environment access:
+
 Guestbook application- Browse to URL "https://guestbook.local" and test the UI
 ArgoCD: 
 1. Browse to URL "https://argocd.local"
