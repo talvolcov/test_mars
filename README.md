@@ -40,7 +40,7 @@ The following folders are located in the repository:<br/>
  <li>To adjust context, run command <b> aws eks --region us-east-1 update-kubeconfig --name Mars-task-cluster </b></li>
  <li>To receive the cluster URL run command</li>
 	 <b> kubectl get svc -n ingress-nginx ingress-nginx-controller -o jsonpath='{.status.loadBalancer.ingress[0]}' </b>
- <li>Copy the URL from the result and use it in the command "nslookup { result_url }"</li>
+ <li>Copy the URL from the result and use it in the command  <b>nslookup { result_url }</b></li>
  <li>The output should contain 2 public IPs (under "Adresses" section)</li>
  <li>Copy one of the public IPs to a new line in your hosts file on your computer as follows:</li>
    <b> {copied public ip}  guestbook.local argocd.local prometheus.local  grafana.local </b>
