@@ -2,14 +2,14 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: {{ include "myapp.fullname" . }}
+  name: {{ .Values.test }}
   namespace: {{ .Release.Namespace }}
   labels:
     release: kube-prometheus-stack   # must match Prometheus release name
 spec:
   selector:
     matchLabels:
-      app: {{ include "myapp.name" . }}
+      app: {{ .Values.test }}
   namespaceSelector:
     matchNames:
       - {{ .Release.Namespace }}

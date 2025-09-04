@@ -1,0 +1,21 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ .Values.frontend.name }}-monitor
+  namespace: {{ .Release.Namespace }}
+  labels:
+    release: kube-prometheus-stack  
+    app: {{ .Values.frontend.applbl }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.frontend.applbl }}
+      tier: {{ .Values.frontend.tier }}
+  namespaceSelector:
+    matchNames:
+      - {{ .Release.Namespace }}
+  endpoints:
+    - port: {{ .Values.frontend.svcPort }}
+      targetPort: {{ .Values.prometheusPort }}
+      path: /metrics
+      interval: 30s
