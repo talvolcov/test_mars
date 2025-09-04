@@ -28,12 +28,4 @@ spec:
             memory: {{ .Values.redis.follower.container.resources.requests.memory }}
         ports:
         - containerPort: {{ .Values.redis.follower.container.ports.source }}
-      - name: redis-exporter
-        image: oliver006/redis_exporter:v1.63.0
-        ports:
-          - name: metrics
-            containerPort: {{ .Values.prometheusPort }}
-        env:
-          - name: REDIS_ADDR
-            value: "redis://127.0.0.1:{{ .Values.redis.follower.container.ports.source }}"
-
+    
