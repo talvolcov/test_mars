@@ -49,18 +49,18 @@ The following folders are located in the repository:<br/>
 
 
 <h2>Environment access:</h2>
-<li>Guestbook application- Browse to URL "https://guestbook.local" and test the UI</li>
+<li>Guestbook application- Browse to URL <b>https://guestbook.local</b> and test the UI</li>
 <li>ArgoCD: </li>
 <ol>
-<li>1. Browse to URL "https://argocd.local"</li>
+<li>1. Browse to URL <b>https://argocd.local</b></li>
 <li>2. Enter credentials: admin / ArgoCD_pass!</li>
 <li>3. Inspect details</li>
 </ol>
-<li>Prometheus - Browse to URL "https://prometheus.local" and test the UI</li>
+<li>Prometheus - Browse to URL <b>https://prometheus.local</b> and test the UI</li>
 
 <li>Grafana:</li>
 <ol>
-<li>Browse to URL "https://grafana.local"</li>
+<li>Browse to URL <b>https://grafana.local</b></li>
 <li>Enter credentials: admin / Grafana_pass!</li>
 <li>Inspect details </li>
 </ol>
