@@ -43,7 +43,7 @@ The following folders are located in the repository:<br/>
  <li>Copy the URL from the result and use it in the command  <b>nslookup { result_url }</b></li>
  <li>The output should contain 2 public IPs (under "Adresses" section)</li>
  <li>Copy one of the public IPs to a new line in your hosts file on your computer as follows:</li>
-   <b> {copied public ip}  guestbook.local argocd.local prometheus.local  grafana.local </b>
+   <b> {copied public ip}    guestbook.local   argocd.local   prometheus.local    grafana.local </b>
  <li>Save the file</li>
 </ol>
 
