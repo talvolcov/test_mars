@@ -32,7 +32,7 @@ The following folders are located in the repository:<br/>
 <li>Run command <b> terraform init</b> </li>
 <li>Run command <b> terraform plan</b> and verify there are no errors</li>
 <li>Run command <b> terraform apply -auto-approve </b></li>
-<li>Wait for run to complete</li>
+<li>Wait until the execution is completed</li>
 </ol>
 <br/>
  <h4>To enable access to the websites, the following actions need to be done:</h4>
