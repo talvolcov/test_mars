@@ -1,0 +1,7 @@
+containers:
+  - name: {{ .Chart.Name }}
+    image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+    ports:
+      - name: http
+        containerPort: {{ .Values.metrics.port }}
+        protocol: TCP
